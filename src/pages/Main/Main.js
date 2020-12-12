@@ -1,4 +1,7 @@
 import * as React from 'react';
+import {
+    useHistory,
+} from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles'
 import {
     Grid,
@@ -28,6 +31,7 @@ const useStyles = makeStyles(theme => ({
 const Main = () => {
     const { starwarsCharacters = [] } = React.useContext(AppContext);
     const classes = useStyles();
+    const history = useHistory();
 
     const renederCard = (el) => {
         if (!el.image) return null;
@@ -37,7 +41,9 @@ const Main = () => {
                 <Card>
                     <CardActionArea
                         className= { classes.action }
-                        onClick={ () => null }
+                        onClick={ () => (
+                            history.push(`/details/${el.id}`)
+                        )}
                     >
                         <CardHeader
                             title={ el.name }
@@ -62,7 +68,7 @@ const Main = () => {
                 justify="flex-start"
                 alignItems="flex-start"
             >
-                { starwarsCharacters.map((el) => renederCard(el)) }
+                { starwarsCharacters.map(renederCard) }
             </Grid>
         </div>
     );
