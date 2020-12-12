@@ -4,16 +4,17 @@ import { CircularProgress } from '@material-ui/core/';
 
 import AppContext from '../../context/AppContext';
 
+import { Character, Params } from '../../typings';
+
 import './Details.css';
 
 const Details = () => {
     const { starwarsCharacters = [] } = React.useContext(AppContext);
-    const { id } = useParams();
+    const { id } = useParams<Params>();
 
-    const character = starwarsCharacters.find((el) => el.id ===  parseInt(id));
-    console.log('character: ', character);
+    const character: Character | undefined = starwarsCharacters.find((el) => el.id ===  parseInt(id));
 
-    const renderEpisode = (el, index) => (
+    const renderEpisode = (el: string, index: number) => (
         <p key={ `episode-${index}` }>{ el }</p>
     );
 
@@ -22,10 +23,10 @@ const Details = () => {
             <section className="star-wars">
                 <div className="crawl">
                     <div className="title">
-                        <h1>{ character.name }</h1>
+                        <h1>{ character!.name }</h1>
                         <p>Participated in episodes:</p>
                     </div>
-                        { character.episodes.map(renderEpisode) }
+                        { character!.episodes.map(renderEpisode) }
                 </div>
             </section>
         </div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles'
 import {
     Grid,
@@ -11,6 +11,8 @@ import {
 } from '@material-ui/core/'
 
 import AppContext from '../../context/AppContext';
+
+import { Character } from '../../typings';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -27,14 +29,14 @@ const useStyles = makeStyles(theme => ({
       },
 }));
 
-const Main = () => {
+const Main: React.FC = () => {
     const { starwarsCharacters = [] } = React.useContext(AppContext);
     const classes = useStyles();
     const history = useHistory();
 
     const isData = starwarsCharacters && starwarsCharacters.length;
 
-    const renederCard = (el) => {
+    const renederCard = (el: Character) => {
         if (!el.image) return null;
 
         return (
@@ -84,4 +86,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default React.memo(Main);
