@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AppContext from './context/AppContext';
-import Main from './pages/Main/Main';
+import Routes from './routes/Ruotes';
 
 import { characters } from './mock/mock';
 
@@ -17,7 +17,7 @@ React.useEffect(() => {
             starwarsCharacters,
         }}
     >
-        <Main />
+        <Routes />
     </AppContext.Provider>
   );
 }
