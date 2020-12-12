@@ -6,7 +6,8 @@ import {
     Card,
     CardMedia,
     CardActionArea,
-    CardHeader
+    CardHeader,
+    CircularProgress,
 } from '@material-ui/core/'
 
 import AppContext from '../../context/AppContext';
@@ -30,6 +31,8 @@ const Main = () => {
     const { starwarsCharacters = [] } = React.useContext(AppContext);
     const classes = useStyles();
     const history = useHistory();
+
+    const isData = starwarsCharacters && starwarsCharacters.length;
 
     const renederCard = (el) => {
         if (!el.image) return null;
@@ -59,15 +62,24 @@ const Main = () => {
 
     return (
         <div className={classes.root}>
-            <Grid
-                container
-                spacing={2}
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
-            >
-                { starwarsCharacters.map(renederCard) }
-            </Grid>
+            {
+                !isData && (
+                    <CircularProgress color="secondary" />
+                )
+            }
+            {
+                isData && (
+                    <Grid
+                        container
+                        spacing={2}
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="flex-start"
+                    >
+                        { starwarsCharacters.map(renederCard) }
+                    </Grid>
+                )
+            }
         </div>
     );
 };
