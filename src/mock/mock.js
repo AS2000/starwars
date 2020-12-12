@@ -2,6 +2,7 @@ export const characters = [
     {
         "id": 1,
         "name": "Shmi Skywalker",
+        "image": "https://static.wikia.nocookie.net/starwars/images/a/ad/ShmiSkywalkerDatabank_%28Repurposed%29.jpeg",
         "episodes": [
             "The Phantom Menace",
             "Attack of the Clones",
@@ -10,6 +11,7 @@ export const characters = [
     {
         "id": 2,
         "name": "Anakin Skywalker",
+        "image": "https://static.wikia.nocookie.net/starwars/images/6/6f/Anakin_Skywalker_RotS.png",
         "episodes": [
             "The Phantom Menace",
             "Attack of the Clones",
@@ -24,6 +26,7 @@ export const characters = [
     {
         "id": 3,
         "name": "Darth Vader",
+        "image": "https://static.wikia.nocookie.net/starwars/images/c/c2/Darth-Vader-RO-SWCT.png",
         "episodes": [
             "Revenge of the Sith",
             "A New Hope",
@@ -37,6 +40,7 @@ export const characters = [
     {
         "id": 4,
         "name": "Luke Skywalker",
+        "image": "https://static.wikia.nocookie.net/starwars/images/3/3d/LukeSkywalker.png",
         "episodes": [
             "A New Hope",
             "The Empire Strikes Back",
@@ -50,6 +54,7 @@ export const characters = [
     {
         "id": 5,
         "name": "Leia Organa",
+        "image": "https://static.wikia.nocookie.net/starwars/images/8/89/Leia_endorpromo02.jpg",
         "episodes": [
             "A New Hope",
             "The Empire Strikes Back",
@@ -68,6 +73,7 @@ export const characters = [
     {
         "id": 6,
         "name": "Han Solo",
+        "image": "https://static.wikia.nocookie.net/starwars/images/e/e2/TFAHanSolo.png",
         "episodes": [
             "A New Hope",
             "The Empire Strikes Back",
@@ -75,6 +81,32 @@ export const characters = [
             "The Force Awakens",
             "The Rise of Skywalker",
             "A Star Wars Story",
+        ]
+    },
+    {
+        "id": 7,
+        "name": "R2-D2",
+        "image": "https://static.wikia.nocookie.net/starwars/images/e/eb/ArtooTFA2-Fathead.png",
+        "episodes": [
+            "A New Hope",
+            "The Empire Strikes Back",
+            "Return of the Jedi",
+            "The Force Awakens",
+            "The Last Jedi",
+            "The Rise of Skywalker",
+        ]
+    },
+    {
+        "id": 8,
+        "name": "C-3PO",
+        "image": "https://static.wikia.nocookie.net/starwars/images/5/51/C-3PO_EP3.png",
+        "episodes": [
+            "A New Hope",
+            "The Empire Strikes Back",
+            "Return of the Jedi",
+            "The Force Awakens",
+            "The Last Jedi",
+            "The Rise of Skywalker",
         ]
     },
 ];
@@ -88,3 +120,5 @@ export const characters = [
 // Episode VII – The Force Awakens
 // Episode VIII – The Last Jedi
 // Episode IX – The Rise of Skywalker
+
+// https://starwars.fandom.com/wiki/Luke_Skywalker
