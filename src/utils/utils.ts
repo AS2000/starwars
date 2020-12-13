@@ -1,4 +1,4 @@
-import { Character, Characters } from './typings';
+import { Character, Characters } from '../typings';
 const _ = require('lodash');
 
 export const cleanGraphqlResponse = (arr: Characters[]) =>
