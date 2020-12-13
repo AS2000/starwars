@@ -18,7 +18,7 @@
 
 ### GraphQL Client
 
-### Tests: Component / Funcion
+### Tests: Component / Function
 
 # To Start the Server:
 

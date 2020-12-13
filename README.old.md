@@ -1,2 +1,0 @@
-# starwars
-StarWars Character List
