@@ -7,8 +7,8 @@ import {
     CardMedia,
     CardActionArea,
     CardHeader,
-    CircularProgress,
 } from '@material-ui/core/'
+import Spinner from '../../components/Spinner/Spinner';
 
 import AppContext from '../../context/AppContext';
 
@@ -30,7 +30,10 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Main: React.FC = () => {
-    const { starwarsCharacters = [] } = React.useContext(AppContext);
+    const {
+        starwarsCharacters = [],
+        loading,
+    } = React.useContext(AppContext);
     const classes = useStyles();
     const history = useHistory();
 
@@ -64,11 +67,9 @@ const Main: React.FC = () => {
 
     return (
         <div className={classes.root}>
-            {
-                !isData && (
-                    <CircularProgress color="secondary" />
-                )
-            }
+            <Spinner
+                isLoading={ loading || !isData }
+            />
             {
                 isData && (
                     <Grid

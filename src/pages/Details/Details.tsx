@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { CircularProgress } from '@material-ui/core/';
+import Spinner from '../../components/Spinner/Spinner';
 
 import AppContext from '../../context/AppContext';
 
@@ -12,7 +12,9 @@ const Details = () => {
     const { starwarsCharacters = [] } = React.useContext(AppContext);
     const { id } = useParams<Params>();
 
-    const character: Character | undefined = starwarsCharacters.find((el) => el.id ===  parseInt(id));
+    const character: Character | undefined = starwarsCharacters.find(
+        (el) => el.id === id
+    );
 
     const renderEpisode = (el: string, index: number) => (
         <p key={ `episode-${index}` }>{ el }</p>
@@ -26,7 +28,7 @@ const Details = () => {
                         <h1>{ character!.name }</h1>
                         <p>Participated in episodes:</p>
                     </div>
-                        { character!.episodes.map(renderEpisode) }
+                    { character!.episodes.map(renderEpisode) }
                 </div>
             </section>
         </div>
@@ -34,11 +36,11 @@ const Details = () => {
 
     return (
         <div>
-            { !character && (
-                <CircularProgress color="secondary" />
-            ) }
+            <Spinner
+                isLoading={ !character }
+            />
             { character && renderCharacterData() }
-    </div>
+        </div>
     );
 };
 

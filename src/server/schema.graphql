@@ -1,0 +1,11 @@
+type Query {
+    info: String!
+    feed: [Characters!]!
+}
+
+type Characters {
+    id: ID!
+    name: String!
+    image: String!
+    episodes: [String]!
+}
